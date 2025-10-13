@@ -66,7 +66,7 @@ This project is backed by my training in both **music industry** and **AI techno
 
 ## 👤 About Me
 
-I’m passionate about **finance , music and data**. I'm a bilingual (**EN/FR**) Music Data Analyst at **BMAT Music**, with 4+ years of experience in music tech . With a strong background in accounting and financial analysis, I developed solid expertise in handling numerical data and supporting strategic decision-making.
+I’m passionate about **finance , music and data**. I'm a bilingual (**EN/FR**) Music Data Analyst at **BMAT Music** - with 4+ years of experience in music tech and a strong background in accounting and financial analysis, I developed solid expertise in handling numerical data and supporting strategic decision-making.
 
 📧 Contact: prudenthonliasso@gmail.com
 
