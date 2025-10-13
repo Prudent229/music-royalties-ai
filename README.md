@@ -16,7 +16,7 @@ With the rise of tools like **Suno, OpenAI Jukebox, MusicGen**, the way music is
 
 ## 🧮 Feature 1: Royalty Simulator
 
-A simple Python script (no experience needed) that:
+A simple Python script that:
 
 - Takes in number of streams
 - Chooses between AI or human-generated content
@@ -50,6 +50,16 @@ This project includes a basic logic layer that simulates royalty differences bet
 - Export to PDF / Excel
 - Spotify / Apple Music API Integration
 - Publish on LinkedIn and portfolio
+
+## 📜 Credentials
+
+This project is backed by my training in both **music industry** and **AI technologies**:
+
+- 🎓 NYU x Billboard – Music Industry Essentials  
+- 🎓 Berklee College of Music – Music Business Certificate  
+- 🤖 Wharton (UPenn) – AI in Business  
+- 🎓 Master's in Finance & Accounting (completed)  
+- 📚 Master's in Accounting, Control & Audit (Continuing Education - In progress)
 
 ---
 
