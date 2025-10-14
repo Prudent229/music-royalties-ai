@@ -1,5 +1,6 @@
-# Music-royalties-ai
-A simulation project for music royalties, including generative AI impact
+# Music Royalties & AI Impact – Simulation Project
+
+A forward-looking data project exploring how music royalties might evolve with the rise of generative AI. Built to position myself as a Financial Planning / Royalties Analyst in the music industry.
 
 This is a personal project to explore the future of **music royalties management** with a focus on the rise of **generative AI** in the music industry.
 
@@ -58,6 +59,18 @@ As AI becomes increasingly involved in music production, fair and transparent mo
 
 💡 These are **speculative models**, not legal opinions, but they highlight the real questions major labels will face in the near future.
 
+📊 Royalty Simulation Excel File
+
+You can explore the royalty data simulation in this downloadable Excel file:
+
+➡️ [`Music_Royalties_Hybrid_Model.xlsx`](./Music_Royalties_Hybrid_Model.xlsx)
+
+It includes:
+- Real artists and AI tools (e.g. Suno.io, Udio)
+- Simulated streaming numbers
+- Breakdown of royalties per contributor
+- Human-only, AI-only, and Hybrid cases
+
 ---
 
 ## 🔭 Roadmap
@@ -86,7 +99,8 @@ This project is backed by my training in both **music industry** and **AI techno
 
 ## 👤 About Me
 
-I’m passionate about **finance , music and data**. I'm a bilingual (**EN/FR**) Music Data Analyst at **BMAT Music** - with 4+ years of experience in music tech and a strong background in accounting and financial analysis, I developed solid expertise in handling numerical data and supporting strategic decision-making.
+I’m a bilingual (French/English) Music Data Analyst at BMAT Music, with over 4 years of experience in music tech. I hold a strong academic background in accounting and financial analysis, which I now use to turn complex data into strategic insights.
+
+My passion lies at the intersection of music, finance, and innovation. This project reflects my interest in helping the music industry adapt to disruptive technologies like AI — with fairness, clarity, and data-driven logic.
 
 📧 Contact: prudenthonliasso@gmail.com
-
