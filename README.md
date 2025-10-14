@@ -13,7 +13,6 @@ With the rise of tools like **Suno, OpenAI Jukebox, MusicGen**, the way music is
 - Explore how AI-generated music could impact royalty distribution
 - Offer forward-thinking scenarios for future revenue models
 
-
 ## 🧮 Feature 1: Royalty Simulator
 
 A simple Python script that:
@@ -35,6 +34,27 @@ This project includes a basic logic layer that simulates royalty differences bet
 
 - Human-created music
 - AI-generated music
+
+## 💡 Hybrid Royalties Breakdown (Human + AI)
+
+In this project, hybrid music tracks — co-created by humans and AI tools — are treated as shared intellectual property.
+
+I propose the following royalty split model:
+- 💵 $0.0003 per stream for the **human artist**
+- 🤖 $0.0001 per stream for the **AI provider** (e.g. Suno.io, Udio, Mubert, AIVA)
+
+This approach acknowledges both creative and technological contributions, anticipating future industry practices where AI-generated elements will require monetization or licensing.
+
+### 🧪 Example
+
+- Track: **"FusionWave"**
+- Streams: `1,000,000`
+- Royalty Breakdown:
+  - Human Artist earns: `$300`
+  - AI Company (e.g. Suno.io) earns: `$100`
+  - **Total Royalties**: `$400`
+
+As AI becomes increasingly involved in music production, fair and transparent models like this can help reshape the royalty ecosystem with clarity and fairness.
 
 💡 These are **speculative models**, not legal opinions, but they highlight the real questions major labels will face in the near future.
 
