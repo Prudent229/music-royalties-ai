@@ -76,7 +76,6 @@ It includes:
 ## 🔭 Roadmap
 
 ✅ Current: Python-based royalty simulator  
-🚧 Next Steps:
 - Simple Web interface
 - Add sample data or streaming reports
 - Dashboard with graphs and filters
@@ -86,13 +85,16 @@ It includes:
 
 ## 📜 Credentials
 
-This project is backed by my training in both **music industry** and **AI technologies**:
+This project is backed by my training in both **AI technologies**,  **music industry** and **Finance**
 
 - 🤖 Wharton (UPenn) – AI in Business Certificate
 - 🎓 NYU x Billboard – Music Industry Essentials Certificate  
 - 🎓 Berklee College of Music – Music Business Certificate
 - 🎓 Microsoft Professional Power BI Certificate
-- 🎓 Master's in Finance & Accounting (completed)  
+- 🎓 365 Careers - Financial Analyst Certificate
+- 🎓 365 Careers - MBA , Business Lessons Certificate
+- 🎓 Udemy - Investment Banking , Finance and Private Equity Certificate    
+- 📚 Master's in Finance & Accounting (completed)  
 - 📚 Master's in Accounting, Control & Audit (Continuing Education - In progress)
 
 ---
