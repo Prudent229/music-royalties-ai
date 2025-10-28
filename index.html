@@ -41,6 +41,72 @@
       opacity: 0.95;
     }
     
+    .excel-banner {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    
+    .excel-banner h2 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .excel-banner p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    
+    .excel-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    
+    .excel-feature {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .excel-feature strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.05em;
+    }
+    
+    .download-btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: white;
+      color: #1e3c72;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: 700;
+      transition: all 0.3s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+    
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      background: #f0f0f0;
+    }
+    
     .main-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -299,6 +365,10 @@
         grid-template-columns: 1fr;
       }
       
+      .excel-features {
+        grid-template-columns: 1fr;
+      }
+      
       header h1 {
         font-size: 1.8em;
       }
@@ -315,6 +385,35 @@
       <h1>🎵 Music Royalties & AI Impact</h1>
       <p>Interactive Simulation Tool for Future Music Revenue Models</p>
     </header>
+    
+    <!-- Excel Download Banner -->
+    <div class="excel-banner">
+      <h2>📊 Full Excel Analysis Available</h2>
+      <p><strong>This project demonstrates potential future scenarios that major music labels may face with AI-generated content.</strong></p>
+      
+      <div class="excel-features">
+        <div class="excel-feature">
+          <strong>📈 Sheet 1: Royalty Data</strong>
+          <span>Complete data with automatic formulas for Human, AI, and Hybrid tracks</span>
+        </div>
+        <div class="excel-feature">
+          <strong>📊 Sheet 2: Dashboard</strong>
+          <span>Summary statistics and revenue breakdown by content type</span>
+        </div>
+        <div class="excel-feature">
+          <strong>🔮 Sheet 3: Projections</strong>
+          <span>1-year and 5-year growth scenarios with differentiated rates</span>
+        </div>
+      </div>
+      
+      <a href="https://github.com/Prudent229/music-royalties-ai/raw/main/Music_Royalties_AI_Simulator_Model.xlsx" class="download-btn">
+        📥 Download Excel File
+      </a>
+      
+      <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        ⚠️ All data is simulated for demonstration purposes
+      </p>
+    </div>
     
     <div class="main-content">
       <!-- Calculator Section -->
