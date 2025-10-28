@@ -3,64 +3,554 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Music Royalties & AI | Portfolio Project</title>
+  <title>Music Royalties & AI | Interactive Simulator</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
-    h1 { color: #333366; }
-    h2 { color: #444; }
-    p { line-height: 1.6; }
-    .box { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px #ccc; max-width: 800px; margin: auto; }
-    a.button {
-      display: inline-block;
-      padding: 10px 20px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    header {
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+    
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    header p {
+      font-size: 1.2em;
+      opacity: 0.95;
+    }
+    
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .card h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+    
+    .input-group {
+      margin-bottom: 25px;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+      font-size: 1.1em;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1.1em;
+      transition: border-color 0.3s;
+    }
+    
+    .input-group input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .button-group {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .btn-type {
+      padding: 15px;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-align: center;
+    }
+    
+    .btn-type:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-type.active {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+    }
+    
+    .btn-calculate {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2em;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    
+    .btn-calculate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    .results {
+      background: #f8f9ff;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.1em;
+    }
+    
+    .result-item:last-child {
+      border-bottom: none;
+      font-weight: 700;
+      font-size: 1.3em;
+      color: #667eea;
       margin-top: 10px;
-      background: #333366;
+      padding-top: 15px;
+      border-top: 2px solid #667eea;
+    }
+    
+    .result-label {
+      color: #666;
+    }
+    
+    .result-value {
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .chart-container {
+      height: 300px;
+      margin-top: 20px;
+      position: relative;
+    }
+    
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 100%;
+      padding: 20px 0;
+    }
+    
+    .bar {
+      flex: 1;
+      margin: 0 10px;
+      background: linear-gradient(to top, #667eea, #764ba2);
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      transition: all 0.5s ease;
+      min-height: 20px;
+    }
+    
+    .bar-label {
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.9em;
+      font-weight: 600;
+      color: #333;
+    }
+    
+    .bar-value {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-weight: 700;
+      color: #667eea;
+      font-size: 0.95em;
+    }
+    
+    .info-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+    
+    .profile-section {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-top: 30px;
+    }
+    
+    .profile-section h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+    
+    .profile-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .profile-item h3 {
+      color: #764ba2;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    
+    .profile-item ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .profile-item ul li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .profile-item ul li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+    }
+    
+    .contact-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: transform 0.3s;
     }
-    a.button:hover { background: #555599; }
+    
+    .contact-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .profile-content {
+        grid-template-columns: 1fr;
+      }
+      
+      header h1 {
+        font-size: 1.8em;
+      }
+      
+      .button-group {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>🎵 Music Royalties & AI – Simulation Project</h1>
-    <p>
-      This project explores how royalty distribution models might evolve in the era of generative AI in music.
-      It includes simulations for:
-    </p>
-    <ul>
-      <li>Human-created music royalties ($0.003/stream)</li>
-      <li>AI-only generated music royalties ($0.001/stream)</li>
-      <li>Hybrid models (Human + AI provider: $0.0003 / $0.0001)</li>
-    </ul>
-
-    <h2>📊 Download the Excel Simulation</h2>
-    <p>
-      This file contains simulated data for real and AI-generated artists:
-    </p>
-    <a class="button" href="Music_Royalties_Hybrid_Model.xlsx" download>📥 Download Excel File</a>
-
-    <h2>👤 About Me</h2>
-    <p>
-      I’m a bilingual (EN/FR) Music Data Analyst at BMAT Music with 4+ years of experience in music tech. With strong financial and accounting expertise, I build models that help companies make data-driven royalty and licensing decisions.
-    </p>
-    <p>
-      <strong>Contact:</strong> <a href="mailto:prudenthonliasso@gmail.com">prudenthonliasso@gmail.com</a>
-    </p>
-
-    <h2>📄 Certifications</h2>
-    <ul>
-      <li>Wharton (UPenn) – AI in Business</li>
-      <li>NYU x Billboard – Music Industry Essentials</li>
-      <li>Berklee College of Music – Music Business</li>
-      <li>Microsoft – Prodessional Power BI</li>
-    </ul>
-
-    <h2>💼 Career Goal</h2>
-    <p>
-      Seeking opportunities as a Financial Planning / Royalties Analyst in major music companies, publishers or tech startups focused on music data and IP.
-    </p>
+  <div class="container">
+    <header>
+      <h1>🎵 Music Royalties & AI Impact</h1>
+      <p>Interactive Simulation Tool for Future Music Revenue Models</p>
+    </header>
+    
+    <div class="main-content">
+      <!-- Calculator Section -->
+      <div class="card">
+        <h2>💰 Royalty Calculator</h2>
+        
+        <div class="input-group">
+          <label for="streams">Number of Streams</label>
+          <input type="number" id="streams" placeholder="e.g., 1000000" value="1000000">
+        </div>
+        
+        <div class="input-group">
+          <label>Content Type</label>
+          <div class="button-group">
+            <button class="btn-type active" data-type="human">
+              👤 Human<br>Artist
+            </button>
+            <button class="btn-type" data-type="ai">
+              🤖 AI<br>Generated
+            </button>
+            <button class="btn-type" data-type="hybrid">
+              🔄 Hybrid<br>(Human+AI)
+            </button>
+          </div>
+        </div>
+        
+        <button class="btn-calculate" onclick="calculateRoyalties()">
+          Calculate Royalties
+        </button>
+        
+        <div class="results" id="results" style="display: none;">
+          <div id="resultsContent"></div>
+        </div>
+        
+        <div class="info-box">
+          <strong>💡 Rates Used:</strong><br>
+          • Human Artist: $0.003/stream<br>
+          • AI Generated: $0.001/stream<br>
+          • Hybrid: $0.0003 (Human) + $0.0001 (AI Provider)
+        </div>
+      </div>
+      
+      <!-- Visualization Section -->
+      <div class="card">
+        <h2>📊 Comparison Chart</h2>
+        <p style="color: #666; margin-bottom: 20px;">Visual comparison of royalty models based on your input</p>
+        
+        <div class="chart-container">
+          <div class="bar-chart" id="barChart">
+            <div class="bar" style="height: 0%;" id="barHuman">
+              <div class="bar-value" id="valueHuman">$0</div>
+              <div class="bar-label">Human<br>Artist</div>
+            </div>
+            <div class="bar" style="height: 0%;" id="barAI">
+              <div class="bar-value" id="valueAI">$0</div>
+              <div class="bar-label">AI<br>Generated</div>
+            </div>
+            <div class="bar" style="height: 0%;" id="barHybrid">
+              <div class="bar-value" id="valueHybrid">$0</div>
+              <div class="bar-label">Hybrid<br>(Total)</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-box" style="background: #d1ecf1; border-left-color: #0c5460;">
+          <strong>📈 Insight:</strong><br>
+          This chart shows how different content types generate varying royalty amounts for the same number of streams. The hybrid model represents the future where human creativity and AI tools collaborate.
+        </div>
+      </div>
+    </div>
+    
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <h2>👤 About This Project</h2>
+      <div class="profile-content">
+        <div class="profile-item">
+          <h3>🎯 Career Goal</h3>
+          <p>Seeking opportunities as a <strong>Financial Planning / Royalties Analyst</strong> in major music companies, publishers, or tech startups focused on music data and IP.</p>
+          
+          <h3 style="margin-top: 25px;">📧 Contact</h3>
+          <p>Prudent Honliasso<br>
+          Music Data Analyst @ BMAT Music<br>
+          4+ years experience in music tech</p>
+          <a href="mailto:prudenthonliasso@gmail.com" class="contact-btn">📬 Get in Touch</a>
+        </div>
+        
+        <div class="profile-item">
+          <h3>🎓 Certifications</h3>
+          <ul>
+            <li>Wharton (UPenn) – AI in Business</li>
+            <li>NYU x Billboard – Music Industry Essentials</li>
+            <li>Berklee College of Music – Music Business</li>
+            <li>Microsoft – Professional Power BI</li>
+            <li>365 Careers – Financial Analyst</li>
+            <li>365 Careers – MBA Business Lessons</li>
+            <li>Master's in Finance & Accounting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
+  
+  <script>
+    let selectedType = 'human';
+    
+    // Button selection
+    document.querySelectorAll('.btn-type').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.btn-type').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        selectedType = this.dataset.type;
+      });
+    });
+    
+    // Calculate on Enter key
+    document.getElementById('streams').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        calculateRoyalties();
+      }
+    });
+    
+    function calculateRoyalties() {
+      const streams = parseInt(document.getElementById('streams').value) || 0;
+      
+      if (streams <= 0) {
+        alert('Please enter a valid number of streams!');
+        return;
+      }
+      
+      const rates = {
+        human: 0.003,
+        ai: 0.001,
+        hybrid: {
+          humanRate: 0.0003,
+          aiRate: 0.0001
+        }
+      };
+      
+      let resultsHTML = '';
+      let totalRoyalty = 0;
+      
+      if (selectedType === 'human') {
+        totalRoyalty = streams * rates.human;
+        resultsHTML = `
+          <div class="result-item">
+            <span class="result-label">Streams:</span>
+            <span class="result-value">${streams.toLocaleString()}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Content Type:</span>
+            <span class="result-value">👤 Human Artist</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Rate per Stream:</span>
+            <span class="result-value">$${rates.human}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Total Royalties:</span>
+            <span class="result-value">$${totalRoyalty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+        `;
+      } else if (selectedType === 'ai') {
+        totalRoyalty = streams * rates.ai;
+        resultsHTML = `
+          <div class="result-item">
+            <span class="result-label">Streams:</span>
+            <span class="result-value">${streams.toLocaleString()}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Content Type:</span>
+            <span class="result-value">🤖 AI Generated</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Rate per Stream:</span>
+            <span class="result-value">$${rates.ai}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Total Royalties:</span>
+            <span class="result-value">$${totalRoyalty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+        `;
+      } else {
+        const humanRoyalty = streams * rates.hybrid.humanRate;
+        const aiRoyalty = streams * rates.hybrid.aiRate;
+        totalRoyalty = humanRoyalty + aiRoyalty;
+        resultsHTML = `
+          <div class="result-item">
+            <span class="result-label">Streams:</span>
+            <span class="result-value">${streams.toLocaleString()}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Content Type:</span>
+            <span class="result-value">🔄 Hybrid (Human + AI)</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Human Artist Share:</span>
+            <span class="result-value">$${humanRoyalty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">AI Provider Share:</span>
+            <span class="result-value">$${aiRoyalty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">Total Royalties:</span>
+            <span class="result-value">$${totalRoyalty.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+          </div>
+        `;
+      }
+      
+      document.getElementById('resultsContent').innerHTML = resultsHTML;
+      document.getElementById('results').style.display = 'block';
+      
+      // Update chart
+      updateChart(streams, rates);
+    }
+    
+    function updateChart(streams, rates) {
+      const humanTotal = streams * rates.human;
+      const aiTotal = streams * rates.ai;
+      const hybridTotal = streams * (rates.hybrid.humanRate + rates.hybrid.aiRate);
+      
+      const maxValue = Math.max(humanTotal, aiTotal, hybridTotal);
+      
+      // Update bars
+      document.getElementById('barHuman').style.height = `${(humanTotal / maxValue) * 100}%`;
+      document.getElementById('barAI').style.height = `${(aiTotal / maxValue) * 100}%`;
+      document.getElementById('barHybrid').style.height = `${(hybridTotal / maxValue) * 100}%`;
+      
+      // Update values
+      document.getElementById('valueHuman').textContent = `$${humanTotal.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+      document.getElementById('valueAI').textContent = `$${aiTotal.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+      document.getElementById('valueHybrid').textContent = `$${hybridTotal.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0})}`;
+    }
+    
+    // Initialize chart with default values
+    calculateRoyalties();
+  </script>
 </body>
 </html>
