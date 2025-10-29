@@ -63,7 +63,7 @@ As AI becomes increasingly involved in music production, fair and transparent mo
 
 You can explore the royalty data simulation in this downloadable Excel file:
 
-➡️ [`Music_Royalties_Hybrid_Model.xlsx`](./Music_Royalties_Hybrid_Model.xlsx)
+➡️ [`Music_Royalties_AI_Simulator_Model.xlsx`](./Music_Royalties_AI_Simulator_Model.xlsx)
 
 It includes:
 - Real artists and AI tools (e.g. Suno.io, Udio)
