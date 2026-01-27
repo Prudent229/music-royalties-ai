@@ -1,5 +1,7 @@
 # Music Royalties & AI Impact – Simulation Project
 
+>  **[Try the Interactive Demo →](https://prudent229.github.io/ai-royalties.html)**
+
 A forward-looking data project exploring how music royalties might evolve with the rise of generative AI. Built to position myself as a Financial Planning / Royalties Analyst in the music industry.
 
 This is a personal project to explore the future of **music royalties management** with a focus on the rise of **generative AI** in the music industry.
@@ -101,8 +103,14 @@ This project is backed by my training in both **AI technologies**,  **music indu
 
 ## 👤 About Me
 
-I’m a bilingual (French/English) Music Data Analyst at BMAT Music, with over 4 years of experience in music tech. I hold a strong academic background in accounting and financial analysis, which I now use to turn complex data into strategic insights.
+I'm a bilingual (French/English) Music Data Analyst at BMAT Music, with over 4 years of experience in music tech. I hold a strong academic background in accounting and financial analysis, which I now use to turn complex data into strategic insights.
 
 My passion lies at the intersection of music, finance, and innovation. This project reflects my interest in helping the music industry adapt to disruptive technologies like AI — with fairness, clarity, and data-driven logic.
 
-📧 Contact: prudenthonliasso@gmail.com
+**🌐 Portfolio**: [prudent229.github.io](https://prudent229.github.io)  
+**📧 Contact**: prudenthonliasso@gmail.com  
+**💼 LinkedIn**: [Prudent Honliasso](https://www.linkedin.com/in/prudent-honliasso/)
+
+## 🔗 Related Projects
+
+- [DSP Payment Simulator - MENA Region](https://github.com/Prudent229/dsp-payment-simulator-mena) - Analyzing streaming economics across major DSPs in MENA
