@@ -97,7 +97,7 @@ This project is backed by my training in both **AI technologies**,  **music indu
 - 🎓 365 Careers - MBA , Business Lessons Certificate
 - 🎓 Udemy - Investment Banking , Finance and Private Equity Certificate    
 - 📚 Master's in Finance & Accounting (completed)  
-- 📚 Master's in Accounting, Control & Audit (Continuing Education - In progress)
+- 📚 Master's in Accounting, Control & Audit (CCA) – Le Mans University (completed)
 
 ---
 
