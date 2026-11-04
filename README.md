@@ -103,7 +103,7 @@ This project is backed by my training in both **AI technologies**,  **music indu
 
 ## 👤 About Me
 
-I'm a bilingual (French/English) Music Data Analyst at BMAT Music, with over 4 years of experience in music tech. I hold a strong academic background in accounting and financial analysis, which I now use to turn complex data into strategic insights.
+I'm a bilingual (French/English) Music Data Analyst at BMAT Music, with over 5 years of experience in music tech. I hold a strong academic background in accounting and financial analysis, which I now use to turn complex data into strategic insights.
 
 My passion lies at the intersection of music, finance, and innovation. This project reflects my interest in helping the music industry adapt to disruptive technologies like AI — with fairness, clarity, and data-driven logic.
 
