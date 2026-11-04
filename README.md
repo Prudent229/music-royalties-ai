@@ -1,6 +1,6 @@
 # Music Royalties & AI Impact – Simulation Project
 
->  **[Try the Interactive Demo →](https://prudent229.github.io/ai-royalties.html)**
+>  **[Try the Interactive Demo →](https://prudent229.github.io/music-royalties-ai/)**
 
 A forward-looking data project exploring how music royalties might evolve with the rise of generative AI. Built to position myself as a Financial Planning / Royalties Analyst in the music industry.
 
@@ -43,8 +43,8 @@ This project includes a basic logic layer that simulates royalty differences bet
 In this project, hybrid music tracks — co-created by humans and AI tools — are treated as shared intellectual property.
 
 I propose the following royalty split model:
-- 💵 $0.0003 per stream for the **human artist**
-- 🤖 $0.0001 per stream for the **AI provider** (e.g. Suno.io, Udio, Mubert, AIVA)
+- 💵 $0.0015 per stream for the **human artist**
+- 🤖 $0.0005 per stream for the **AI provider** (e.g. Suno.io, Udio, Mubert, AIVA)
 
 This approach acknowledges both creative and technological contributions, anticipating future industry practices where AI-generated elements will require monetization or licensing.
 
@@ -53,9 +53,9 @@ This approach acknowledges both creative and technological contributions, antici
 - Track: **"FusionWave"**
 - Streams: `1,000,000`
 - Royalty Breakdown:
-  - Human Artist earns: `$300`
-  - AI Company (e.g. Suno.io) earns: `$100`
-  - **Total Royalties**: `$400`
+  - Human Artist earns: `$1,500`
+  - AI Company (e.g. Suno.io) earns: `$500`
+  - **Total Royalties**: `$2,000`
 
 As AI becomes increasingly involved in music production, fair and transparent models like this can help reshape the royalty ecosystem with clarity and fairness.
 
@@ -114,3 +114,5 @@ My passion lies at the intersection of music, finance, and innovation. This proj
 ## 🔗 Related Projects
 
 - [DSP Payment Simulator - MENA Region](https://github.com/Prudent229/dsp-payment-simulator-mena) - Analyzing streaming economics across major DSPs in MENA
+
+> 🛠️ *Built with AI assistance (design, code and documentation), under my direction and review. All data is simulated.*
