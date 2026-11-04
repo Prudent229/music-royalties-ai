@@ -35,8 +35,8 @@ def get_rates():
     return {
         'human': 0.003,
         'ai': 0.001,
-        'hybrid_human': 0.0003,
-        'hybrid_ai': 0.0001
+        'hybrid_human': 0.0015,
+        'hybrid_ai': 0.0005
     }
 
 def calculate_royalties(streams, content_type):
